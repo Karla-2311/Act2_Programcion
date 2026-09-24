@@ -80,6 +80,8 @@ saludoSegunHora(); // "Buenas tardes" (si son las 3pm)
 # Capturas de pantalla
 
 ## Captura 1: Validación de correo
+ 
+ 
 
 ## Captura 2: Validación de solo letras
 
