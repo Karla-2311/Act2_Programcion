@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Utilería - Login</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="contenedor">
+  <p class="saludo" id="saludo"></p>
+  <h1>Iniciar sesión</h1>
+  <p class="subtitulo">Accede con tu correo y contraseña validados.</p>
+
+  <form id="formLogin" novalidate>
+    <label for="correo">Correo electrónico</label>
+    <input type="text" id="correo" placeholder="Ej. maria@correo.com">
+    <div class="error" id="errorCorreo"></div>
+
+    <label for="password">Contraseña</label>
+    <input type="password" id="password" placeholder="Mín. 8 caracteres">
+    <div class="error" id="errorPassword"></div>
+    <div class="error" id="mensajeExito" style="color:#2a9d8f;"></div>
+
+    <button type="submit">Entrar</button>
+  </form>
+
+  <a class="enlace" href="index.html">¿No tienes cuenta? Regístrate</a>
+</div>
+
+<script src="js/utileria.js"></script>
+<script>
+  const form = document.getElementById('formLogin');
+
+  document.getElementById('saludo').textContent = saludoSegunHora() + ', qué gusto verte ';
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    let valido = true;
+
+    // --- Correo ---
+    const correo = document.getElementById('correo');
+    const errorCorreo = document.getElementById('errorCorreo');
+    if (!validarCorreo(correo.value.trim())) {
+      errorCorreo.textContent = 'Correo electrónico no válido.';
+      correo.classList.add('invalido');
+      valido = false;
+    } else {
+      errorCorreo.textContent = '';
+      correo.classList.remove('invalido');
+    }
+
+    // --- Password ---
+    const password = document.getElementById('password');
+    const errorPassword = document.getElementById('errorPassword');
+    if (!validarPassword(password.value)) {
+      errorPassword.textContent =
+        'Debe tener 8+ caracteres, mayúscula, minúscula, número y carácter especial.';
+      password.classList.add('invalido');
+      valido = false;
+    } else {
+      errorPassword.textContent = '';
+      password.classList.remove('invalido');
+    }
+
+    const mensajeExito = document.getElementById('mensajeExito');
+    if (!valido) {
+      mensajeExito.textContent = '';
+      return;
+    }
+
+    mensajeExito.textContent = '¡Inicio de sesión válido!';
+  });
+</script>
+
+</body>
+</html>
