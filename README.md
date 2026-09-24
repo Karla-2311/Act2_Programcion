@@ -77,34 +77,34 @@ saludoSegunHora(); // "Buenas tardes" (si son las 3pm)
 - **`index.html`**: formulario de registro que usa `validarCorreo`, `soloLetras` y `validarLongitud`, un modal que muestra la edad calculada con `calcularEdad` / `esMayorDeEdad` y los días para el próximo cumpleaños con `diasParaCumpleanos`, y un saludo dinámico arriba del formulario con `saludoSegunHora`.
 - **`login.html`**: formulario de inicio de sesión que usa `validarCorreo` y `validarPassword`, también con el saludo dinámico de `saludoSegunHora`.
 
-## Capturas de pantalla
-# Captura 1: Validación de correo
+# Capturas de pantalla
 
-# Captura 2: Validación de solo letras
+## Captura 1: Validación de correo
 
-# Captura 3: Validación de longitud (número)
+## Captura 2: Validación de solo letras
 
-# Captura 4: Calcular edad
+## Captura 3: Validación de longitud (número)
 
-# Captura 5: Es mayor de edad
+## Captura 4: Calcular edad
 
-# Captura 6: Validación de contraseña
+## Captura 5: Es mayor de edad
 
-# Captura 7: Días para cumpleaños
+## Captura 6: Validación de contraseña
 
-# Captura 8: Saludo según la hora actual
+## Captura 7: Días para cumpleaños
 
-# Captura 9: Funcionamiento general
+## Captura 8: Saludo según la hora actual
 
-
-
+## Captura 9: Funcionamiento general
 
 
-*(Agrega aquí tus capturas de la consola mostrando los resultados de las funciones y del formulario/modal funcionando.)*
+
+
+
+
 
 ## Video demo
 
-*(Agrega aquí el link a tu video corto de máx. 1 minuto mostrando el problema que resuelve la librería, cómo se usa, y el resultado en acción.)*
 
 
 
