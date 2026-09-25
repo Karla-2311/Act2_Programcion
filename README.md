@@ -1,4 +1,4 @@
-# UTILERIA JS
+# ACTIVIDAD 2 : UTILERIA JS
 - Programación Web
 - Antonio Vázquez Karla Guadalupe 
 # ¿Qué problema resuelve?
@@ -98,7 +98,7 @@ calcularSignoZodiacal("2000-11-05"); // "Escorpio"
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2bcc45be-b550-4fce-81e2-c265d8cb3349" />
 
 ## Video 
-
+https://youtu.be/WEOHGKff-rQ
 
 
 
