@@ -1,6 +1,6 @@
-## UTILERIA JS
-Programación Web
-Antonio Vázquez Karla Guadalupe 
+# UTILERIA JS
+- Programación Web
+- Antonio Vázquez Karla Guadalupe 
 # ¿Qué problema resuelve?
 Librería JavaScript de funciones utilitarias para **validación de formularios, cálculo de edad y formateo de texto**, sin frameworks ni dependencias externas.
 Resuelve un problema común en proyectos web: tener que reescribir una y otra vez las mismas validaciones (correo, contraseña, nombre, edad) en cada formulario.
@@ -10,7 +10,7 @@ Copia `js/utileria.js` a tu proyecto e impórtalo antes de tu script principal:
 ```html
 <script src="js/utileria.js"></script>
 ```
-## Uso
+# Uso
 
 ### 1. validarCorreo(correo)
 Valida que un texto tenga formato de correo electrónico.
@@ -93,7 +93,8 @@ calcularSignoZodiacal("2000-11-05"); // "Escorpio"
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/257e9412-fddf-4941-a218-10d903645f5e" />
 
 ## Formulario de registro, login y modal
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/88ed47f1-9d82-4f6a-9d86-883ddc7eefdf" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e5797fce-744b-4588-a511-10a03565f94c" />
+
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2bcc45be-b550-4fce-81e2-c265d8cb3349" />
 
 ## Video 
