@@ -105,8 +105,8 @@ h1{
 */
 label{
     display: block;
-    margin-top: 18px;
-    margin-bottom: 8px;
+    margin-top: 4px;
+    margin-bottom: 2px;
     font-weight: 500; /*semi-negrita*/
     font-size: 14px;
 }
@@ -162,7 +162,7 @@ input.invalido{
 */
 button{
     width: 100%;
-    margin-top: 26px;
+    margin-top: 2px;
     background-color: var(--color-primario);
     color: white;
     border: none;

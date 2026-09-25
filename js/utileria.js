@@ -29,16 +29,27 @@ function validarLongitud(numero, maxLongitud) {
 }
 
 /**
+ * Convierte un string "YYYY-MM-DD" (el formato que entrega
+ * <input type="date">) en un objeto {anio, mes, dia}, sin pasar
+ * por new Date() para evitar el desfase de zona horaria (UTC vs local).
+ */
+function parsearFechaISO(fechaStr) {
+  const [anio, mes, dia] = fechaStr.split('-').map(Number);
+  return { anio, mes, dia }; // mes ya es 1-12
+}
+
+/**
  * Calcula la edad en años completos a partir de una fecha de nacimiento.
  */
 function calcularEdad(fechaNacimiento) {
-  const nacimiento = new Date(fechaNacimiento);
+  const { anio, mes, dia } = parsearFechaISO(fechaNacimiento);
   const hoy = new Date();
 
-  let edad = hoy.getFullYear() - nacimiento.getFullYear();
-  const mes = hoy.getMonth() - nacimiento.getMonth();
+  let edad = hoy.getFullYear() - anio;
+  const mesActual = hoy.getMonth() + 1; // 1-12, para comparar contra "mes"
+  const diaActual = hoy.getDate();
 
-  if (mes < 0 || (mes === 0 && hoy.getDate() < nacimiento.getDate())) {
+  if (mesActual < mes || (mesActual === mes && diaActual < dia)) {
     edad--;
   }
 
@@ -67,14 +78,15 @@ function validarPassword(password) {
  * a partir de su fecha de nacimiento. Si el cumpleaños es hoy, regresa 0.
  */
 function diasParaCumpleanos(fechaNacimiento) {
-  const nacimiento = new Date(fechaNacimiento);
+  const { mes, dia } = parsearFechaISO(fechaNacimiento);
   const hoy = new Date();
   hoy.setHours(0, 0, 0, 0);
 
-  let proximo = new Date(hoy.getFullYear(), nacimiento.getMonth(), nacimiento.getDate());
+  // mes viene 1-12, pero el constructor Date() espera el mes 0-indexado
+  let proximo = new Date(hoy.getFullYear(), mes - 1, dia);
 
   if (proximo < hoy) {
-    proximo = new Date(hoy.getFullYear() + 1, nacimiento.getMonth(), nacimiento.getDate());
+    proximo = new Date(hoy.getFullYear() + 1, mes - 1, dia);
   }
 
   const msPorDia = 1000 * 60 * 60 * 24;
@@ -92,3 +104,37 @@ function saludoSegunHora() {
   if (hora >= 12 && hora < 19) return 'Buenas tardes';
   return 'Buenas noches';
 }
+
+/**
+ * Calcula el signo zodiacal a partir de una fecha de nacimiento.
+ */
+function calcularSignoZodiacal(fechaNacimiento) {
+  const { mes, dia } = parsearFechaISO(fechaNacimiento);
+
+  const signos = [
+    { signo: 'Capricornio', hasta: [1, 19] },
+    { signo: 'Acuario', hasta: [2, 18] },
+    { signo: 'Piscis', hasta: [3, 20] },
+    { signo: 'Aries', hasta: [4, 19] },
+    { signo: 'Tauro', hasta: [5, 20] },
+    { signo: 'Géminis', hasta: [6, 20] },
+    { signo: 'Cáncer', hasta: [7, 22] },
+    { signo: 'Leo', hasta: [8, 22] },
+    { signo: 'Virgo', hasta: [9, 22] },
+    { signo: 'Libra', hasta: [10, 22] },
+    { signo: 'Escorpio', hasta: [11, 21] },
+    { signo: 'Sagitario', hasta: [12, 21] },
+    { signo: 'Capricornio', hasta: [12, 31] },
+  ];
+
+  for (const item of signos) {
+    const [mesLimite, diaLimite] = item.hasta;
+    if (mes < mesLimite || (mes === mesLimite && dia <= diaLimite)) {
+      return item.signo;
+    }
+  }
+
+  return 'Capricornio';
+}
+ 
+ 
