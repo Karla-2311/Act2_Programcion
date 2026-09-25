@@ -62,7 +62,7 @@ validarPassword("segura123");  // false
 Calcula cuántos días faltan para el próximo cumpleaños de una persona a partir de su fecha de nacimiento. Se muestra en el modal de registro junto con la edad.
 
 ```javascript
-diasParaCumpleanos("2000-11-05"); // ej. 42
+diasParaCumpleaños("2000-11-05"); // ej. 42
 ```
 
 ### 8. saludoSegunHora() — función libre
@@ -72,40 +72,31 @@ Genera un saludo distinto según la hora actual del sistema (mañana, tarde o no
 saludoSegunHora(); // "Buenas tardes" (si son las 3pm)
 ```
 
+### 9. calcularSignoZodiacal(fechaNacimiento) — función libre
+
+Calcula el signo zodiacal a partir de la fecha de nacimiento. Se muestra en el modal de registro junto con la edad y el cumpleaños.
+```javascript
+calcularSignoZodiacal("2000-11-05"); // "Escorpio"
+```
+
 ## Integración en el proyecto
 
-- **`index.html`**: formulario de registro que usa `validarCorreo`, `soloLetras` y `validarLongitud`, un modal que muestra la edad calculada con `calcularEdad` / `esMayorDeEdad` y los días para el próximo cumpleaños con `diasParaCumpleanos`, y un saludo dinámico arriba del formulario con `saludoSegunHora`.
+- **`index.html`**: formulario de registro que usa `validarCorreo`, `soloLetras` y `validarLongitud`, un modal que muestra la edad calculada con `calcularEdad` / `esMayorDeEdad` y los días para el próximo cumpleaños con `diasParaCumpleaños`, y un saludo dinámico arriba del formulario con `saludoSegunHora`.
 - **`login.html`**: formulario de inicio de sesión que usa `validarCorreo` y `validarPassword`, también con el saludo dinámico de `saludoSegunHora`.
 
 # Capturas de pantalla
 
-## Captura 1: Validación de correo
- 
- 
+## Consola: funciones obligatorias
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7c2454dc-887e-40a6-8019-085158c2035f" />
 
-## Captura 2: Validación de solo letras
+## Consola: funciones propias
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/257e9412-fddf-4941-a218-10d903645f5e" />
 
-## Captura 3: Validación de longitud (número)
+## Formulario de registro, login y modal
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/88ed47f1-9d82-4f6a-9d86-883ddc7eefdf" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2bcc45be-b550-4fce-81e2-c265d8cb3349" />
 
-## Captura 4: Calcular edad
-
-## Captura 5: Es mayor de edad
-
-## Captura 6: Validación de contraseña
-
-## Captura 7: Días para cumpleaños
-
-## Captura 8: Saludo según la hora actual
-
-## Captura 9: Funcionamiento general
-
-
-
-
-
-
-
-## Video demo
+## Video 
 
 
 
